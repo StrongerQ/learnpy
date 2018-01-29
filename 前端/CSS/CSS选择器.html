@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{    /*通用选择器*/
+            color: aqua;
+        }
+        p{    /*标签选择器*/
+            background-color: red;
+        }
+        #p{ /*根据id选择,唯一值*/
+            background-color: black;
+        }
+        .c{ /*根据类选择,可选择多个值*/
+            color: blue;
+        }
+        div p{    /* 空格是后代选择*/
+            font-size: 5px;
+        }
+        div #p1{    /*空格是后代选择*/
+            font-size: 50px;
+        }
+        div .c1{    /*空格是后代选择*/
+            font-size: 50px;
+        }
+        div>.c1{    /*大于是儿子选择*/
+            font-size: 50px;
+        }
+        #p1,#p2{    /*逗号多选择*/
+            font-size: 50px;
+        }
+        #p1+.c1{    /*毗邻选择(下方挨着的一个)*/
+            font-size: 50px;
+        }
+
+
+    </style>
+</head>
+<body>
+<div>d1
+    <p>p1<p/>
+    <p id="p1">p2</p>
+    <div class="c2">
+        <p class="c1">p5</p>
+    </div>
+</div>
+<p id="p2">p3</p>
+<p class="c">p4</p>
+<div class="c">d1</div>
+</body>
+</html>

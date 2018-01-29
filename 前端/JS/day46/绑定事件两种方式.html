@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="div1" onclick="func1()">hello duv
+    <p class="ppp">hello p</p>
+</div>
+
+<script>
+    var obj=document.getElementsByClassName("ppp")[0];
+    obj.onclick=function () {
+        alert(123);
+    }
+
+    function func1(){
+        alert("func1")
+    }
+    
+</script>
+
+</body>
+</html>

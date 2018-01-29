@@ -1,0 +1,450 @@
+http://www.cnblogs.com/wupeiqi/articles/5433893.html 佩琪总纲
+
+http://www.cnblogs.com/wupeiqi/articles/5716963.html
+
+http://www.cnblogs.com/wupeiqi/articles/5729934.html 练习题
+
+http://www.cnblogs.com/wupeiqi/articles/5748496.html 练习题答案
+
+一、数据库管理系统DBMS
+    软件
+    
+    bin
+    config
+    db （保存数据）
+      - admin
+         - 123asdfasd.txt {用户名， 密码，类型...}
+         - 123asdfasdb.txt{用户名， 密码，类型...}
+      - course
+      - school
+    src
+
+    写程序：
+        a. 数据库在本地
+            1、找到目录
+            2、添加数据
+        b. 数据库在远程
+            1、socket连接上远程机器
+            2、socket发送｛命令｝ # add|asdfasdfadf
+    做些什么？？？？
+        a. 
+            A，程序
+                程序，socket客户端
+            B，数据
+                socket服务端
+            C，制作一套规则
+                add|阿德法撒旦发射点发
+                delete|asdfasdf
+                ....
+            D，socket客户端和服务端用户认证，授权，限制
+                
+    有人搞了一套软件：
+        
+                socket客户端
+            B，数据
+                socket服务端
+            C，制作一套规则
+                add|阿德法撒旦发射点发
+                delete|asdfasdf
+                ....
+            D，socket客户端和服务端用户认证，授权，限制
+            
+            -- SqlServer（收费），Oracle，sqlite，access...,,,, MySQL
+            
+            MySQL,SqlServer（收费），Oracle，sqlite，access..
+                服务端和客户端
+                mysql：  
+                
+                    add|asdfasd
+                SqlServer:
+                    a|asdfasdf
+        
+二、下载安装
+
+Windows
+1、下载
+2、解压到任意目录
+3、服务器端运行起来
+    mysqld
+
+4、客户端连接
+
+省事：
+    将mysql服务端制作成一个Windows服务
+    net start mysql
+    net stop mysql 
+    ===,打开服务管理，直接...
+
+linux
+1.安装: sudo apt-get install mysql-server mysql-client
+  安装完成后默认启动服务
+2.打开: mysql -u root -p
+3.启动服务:service mysql start
+4.关闭服务:service mysql stop
+
+
+三、MySQL数据库
+
+1、概念
+    
+    数据库，   文件夹
+    数据库表， 文件
+    数据行，   文件中的一行数据
+    
+2、
+    启动服务器：
+        net start mysql 
+        或
+        C:\mysql-5.7.16-winx64\mysql-5.7.16-winx64\mysql
+        
+        mysql.server start 
+        
+        /etc/init.d/mysql start 
+        
+        
+    客户端连接：
+        C:\mysql-5.7.16-winx64\mysql-5.7.16-winx64\mysql -u root -p 
+        
+        
+        初试：
+            
+            show databases;             # 查看当前Mysql都有那些数据，根目录都有那些文件夹
+        
+            create database 数据库名;   # 创建文件夹
+            
+            use 数据库名;               # 使用选中数据库，进入目录
+            
+            show tables;                # 查看当前数据库下都有那些表，
+            
+            create table 表名(nid int,name varchar(20), pwd varchar(64)); # 创建数据库表
+            
+            select * from 表名;         # 查看表中的所有数据
+            
+            insert into 表名(nid,name,pwd) values(1,'alex','123');  # 插入数据
+            
+            -- select * from 表名;
+        
+3、用户授权
+    用户管理特殊命令：
+        创建用户
+            create user '用户名'@'IP地址' identified by '密码';
+        删除用户
+            drop user '用户名'@'IP地址';
+        修改用户
+            rename user '用户名'@'IP地址' to '新用户名'@'IP地址';
+        修改密码
+            set password for '用户名'@'IP地址' = Password('新密码')
+            
+        c:\mysql-5.7.16-winx64\mysql-5.7.16-winx64\bin\mysql -u
+        
+    权限：
+        默认，什么都没有
+        
+        grant  权限 on 数据库.表 to  '用户'@'IP地址'      -- 授权
+        
+        select,查
+        
+        数据库.表
+            test.tb1
+            test.*
+            *.*
+        
+        '用户'@'IP地址'
+            xiaohu@localhost
+            
+        ===========重要，远程连接=============
+        
+====================
+    a. 解放双手，在重复操作文件，直接将命令发送给mysql服务端，自动操作
+    b. 数据库，表，行
+    c. 开户和授权
+        密码，必须用
+        其他，推荐用
+        
+    d. 客户端连接（MySQL提供的客户端）
+        1、 
+            mysql -u root -h 192.168.1.1 -p
+            # 输入密码
+            
+        2、
+            
+            初试：
+                
+                show databases;             # 查看当前Mysql都有那些数据，根目录都有那些文件夹
+            
+                create database 数据库名;   # 创建文件夹
+                
+                use 数据库名;               # 使用选中数据库，进入目录
+                
+                show tables;                # 查看当前数据库下都有那些表，
+                
+                create table 表名(nid int,name varchar(20), pwd varchar(64)); # 创建数据库表
+                
+                select * from 表名;         # 查看表中的所有数据
+                
+                insert into 表名(nid,name,pwd) values(1,'alex','123');  # 插入数据
+                
+                -- select * from 表名;
+            
+        3、 ；；；；；；；；；；
+            
+        
+4、 SQL语句
+    
+    数据库级别
+        SHOW DATABASES;
+        
+        CREATE DATABASE 数据库名称;
+        CREATE DATABASE 数据库名称 DEFAULT CHARSET utf8 COLLATE utf8_general_ci;
+        
+        USE 数据库名称;
+        
+        drop database 数据库名称;
+        
+    表级表
+        show tables;
+        desc tb1;
+        
+        *** create table tb1(nid int, name varchar(10));
+        # 事务，原子操作，回滚
+        
+        a. 默认值
+        b. 是否可以为空
+        c. 自增列（一张表只能有一个，数字，必须是索引-主键）
+        d. 主键索引：
+        
+             一张表只能有一个主键，唯一不能重复，不能为null，- 一般情况下，自增列设置主键
+             1，2，3，4，5，6
+           唯一索引：
+                可以为null，一张表可以有多个唯一列
+                1，2，3，4，5，6，null
+            
+            -- 约束
+            -- 索引，加速查找
+        
+            create table xxx(
+                nid.... primary key,
+                .... 
+            )
+            
+            create table student(
+                name varchar(10) not null,
+                num  int not null,
+                age int,
+                gender int,
+                primary key (name,num)
+            )
+            约束：
+                name num age 
+                 a   88   9
+                 a   99   9
+                 a   88   0
+                 
+            # 主键：
+                    不能为null，
+                    不能重复，
+                    一张表只有一个主键（可以多列组成主键）
+            # 一般用法：
+                    nid int auto_increment primary key,
+            
+            # 请在本地创建表：
+                CREATE DATABASE 数据库名称 DEFAULT CHARSET utf8 COLLATE utf8_general_ci;
+                use 数据库名称;
+
+                create table tb5(
+                    nid int not null auto_increment primary key,
+                    name varchar(16),
+                    age int default 19
+                )engine=innodb default charset=utf8;
+            
+        e. 外键foreign key，一对多
+            
+            两张表建立约束
+            
+            -- 约束
+            -- foreign key，一对多
+            -- alter table 从表 add constraint 外键名 foreign key 从表(id) references 主表(id);
+            -- create table fruit(
+                    nid int not null primary key,
+                    smt char(32) null ,
+                    color_id int not null,
+                    constraint fk_cc foreign key (color_id) references color(nid)
+                )
+         联合唯一索引
+
+            假如:user表中有userID,userName两个字段,如果不希望有2条一模一样的记录,需要给user表添加多个字段的联合唯一索引:
+
+                alter table user add nuique index(user_id,user_name);
+        
+        
+        f. 数据类型：数值、时间和字符串
+            数值：
+                二进制：
+                    bit 二进制
+                整数：
+                    tinyint
+                    smallint
+                    int
+                    bigint
+                        - 范围不一样
+                   
+                小数：
+                    decimal --精确的
+                   
+                            -- 985412154521321.857541245421245845
+                    FLOAT   -- 98541215458798465465749465465465421321.857541245420000000
+                            -- 985412154000000000000000000000000000000000000000000000000
+                    DOUBLE  -- 9854121544587984654657494654654654000000000000000000000000
+                
+            字符串：
+                # 定长
+                    char
+                    create table tb13(n char(7),b int, c int)
+                    insert ssss
+                    # 查找速度快，浪费空间
+                
+                
+                # 变长
+                    varchar
+                    create table tb13(n varchar(7),b int, c int)
+                    insert ssss
+                    insert sssss
+                    insert sssss5
+                    # 查获找速度慢，节省空间
+                    text
+                    mediumtext
+                    longtext
+           二进制数据：
+                TinyBlob、Blob、MediumBlob、LongBlob
+                # 上传文件
+                # Blob,强制二进制方式
+                # varchar(65), "D:\av.avi" 将上传的文件保存在硬盘， D:\av.avi ;
+                
+           时间：
+                DATE
+                    YYYY-MM-DD（1000-01-01/9999-12-31）
+                    # 1996-12-12 18:45
+                    
+                TIME
+                    HH:MM:SS（'-838:59:59'/'838:59:59'）
+
+                YEAR
+                    YYYY（1901/2155）
+
+                DATETIME
+
+                    YYYY-MM-DD HH:MM:SS（1000-01-01 00:00:00/9999-12-31 23:59:59    Y）
+
+                TIMESTAMP
+
+                    YYYYMMDD HHMMSS（1970-01-01 00:00:00/2037 年某时）
+                
+            enum
+                单选
+            
+            集合
+                多选
+            
+        create table tb13(num decimal(6,2)) #8888.18
+                    
+        drop table tb1;     # 直接表删除
+        
+        delete from tb1;    # 清空表内容
+        truncate table tb1; # 清空表内容，速度快，自增回到远点
+        
+        select * from tbl;
+        
+    数据行级别 *****
+        
+        select * from tbl;
+        
+        
+        
+        # 增
+            insert into tb1(name,age) values('alex', 18);
+            insert into tb1(name,age) values('alex', 18),('eric', 19),('eric', 19);
+            create 
+            
+        # 删
+        
+        # 改
+        
+        # 查
+        
+        # 其他
+        
+            连表操作：
+                # 连表
+                select * form a,b where a.x = b.o
+                
+                # join,
+                    a. left join
+                        select * from a LEFT JOIN b ON a.x = b.o
+                    
+                    b. inner join ,永远不会出现Null
+                        select * from a inner JOIN b ON a.x = b.o
+                    
+                        
+                
+===========今日内容整理 ================
+1、数据库概念，很多
+2、数据库，表，行
+3、启动服务器端，启动客户端连接服务端
+    - 用户管理
+    - 权限管理
+4、SQL语句
+    数据库操作 *
+    表操作**
+        - 是否可以为空
+        - 默认值
+        - 主键
+        - 外键
+        - 自增
+        - 数据类型（char,varchar）
+    数据行 ******：
+        增删改查
+        其他：
+            limit offset 
+            left join 
+            order by 
+            group by ,having      max,min,sum,count
+            # 条件，模糊，.....
+            
+            
+
+        
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                     

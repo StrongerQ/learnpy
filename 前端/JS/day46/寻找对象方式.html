@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="div1">hello
+     <div class="div2">hello 2</div>
+     <div class="div3" name="alex">hello 3
+          <p >hello inner</p>
+          <p id="ppp">hello inner2</p>
+          <p class="ppp">hello inner3</p>
+          <p name="alex">hello inner4</p>
+     </div>
+     <p>hello p</p>
+</div>
+
+
+</body>
+
+
+</html>
+
+<script>
+
+    //全局查找：
+         // 通过ID
+        //var temp=document.getElementById("div1");
+         //通过class
+//        var ele=document.getElementsByClassName("div2")[0];
+//        var ele2=ele.nextElementSibling;
+//        alert(ele2.innerHTML);
+         // 通过tag
+//        var tag=document.getElementsByTagName("p");
+//        alert(tag[0].innerHTML)
+        //通过Name
+
+
+//         var Name=document.getElementsByName("alex");
+//         for(var i in Name){
+//              console.log(Name[i].innerHTML)
+//         }
+
+    //局部查找：
+//           var ele=document.getElementsByClassName("div3")[0];
+
+           // 局部查找可以通过 TagName
+//           var ele2=ele.getElementsByTagName("p");
+           //alert(ele2.innerHTML)
+//           alert(ele2.length)
+
+//           局部查找可以通过 class
+//            var ele4=ele.getElementsByClassName("ppp");
+//            alert(ele4);
+
+
+//           局部查找不可以通过 tagName
+//              var ele5=ele.getElementsByName("alex");
+//              alert(ele5);
+
+//           局部查找不可以通过ID
+//            var ele3 =ele.getElementById("ppp");
+//            alert(ele3.innerHTML);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

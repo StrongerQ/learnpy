@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p ondblclick="alert(123)">ppppp</p>
+
+<input class="keyword" type="text" onfocus="func1()" onblur="func2()" value="请输入用户名">
+<input type="text">
+
+
+<script>
+    function func1() {
+//        console.log(111)
+        var ky=document.getElementsByClassName("keyword")[0];
+        ky.value="";
+
+
+    }
+    function func2() {
+
+        var ky=document.getElementsByClassName("keyword")[0];
+        if (ky.value.trim().length==0){
+            ky.value="请输入用户名";
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+1、增删改差
+2、其他：
+    分组：
+        group by
+        xxx       having 聚合条件。。。
+        
+    分页：
+        前几行， select .... limit 3;
+        limit 3,4        # 第三行开始，取4行
+        limit 4 offset 3 # ...
+    
+    连表：
+        left outer join  on
+        # 表1 left join 表2 on 
+        # 如果表1中的数据多，表2少，null
+        
+        right outer join 
+        
+        inner join 
+        # 如果表1中的数据多，表2少，null
+    排序（张伟）：
+        desc
+        asc
+        
+        nid    name 
+         1     alex
+         2     eric
+         1     alex
+         4     tony
+         # 从小到大，id从大到小
+         select * from tb order by name asc, nid desc,sid asc ;
+         
+    union
+        
+    条件：
+        > < = >= != <=
+        in (1,2,3,4)
+        not in (...)
+        in (select nid from tb)
+        
+3、连表，外键 ****
+    一对多
+    
+
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        

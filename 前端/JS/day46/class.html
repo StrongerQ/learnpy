@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .bigger{
+            font-size: 34px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="div1 div2 bigger" id="ID">
+    hello
+    <div>hello2</div>
+    <p>hello p</p>
+</div>
+
+<script>
+    var ele=document.getElementById("ID");
+//    alert(ele.className)
+//    ele.classList.add("bigger")
+    ele.classList.remove("bigger");
+</script>
+</body>
+</html>

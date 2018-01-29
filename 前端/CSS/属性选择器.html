@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        [class='div2']{  /*根据属性和值选择*/
+            color: blue;
+        }
+        [class]{  /*根据属性选择*/
+            background-color: yellow;
+        }
+        [alex]{  /*根据属性选择*/
+            background-color: red;
+        }
+        p[class='div1']{  /*根据属性选择*/
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+
+<div class="div1" alex="sb">div1</div> <!--自定义属性-->
+<p class="div1">p1</p>
+<p class="div1 div2">p1</p> <!--一个属性可以有多可值,用空格分开-->
+<div class="div1">div1</div>
+<div class="div2">div2</div>
+<div id="id1">id1</div>
+
+</body>
+</html>

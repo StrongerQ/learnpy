@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<div id="outer">
+    <div class="item">
+         <input type="button" value="+" onclick="fun1(this)">
+        <input type="text">
+    </div>
+    <div class="item">
+         <input type="button" value="-" onclick="fun1(this)">
+        <input type="text">
+    </div>
+
+
+</div>
+
+
+
+<script src="jquery-3.1.1.js"></script>
+<script>
+     function fun1(self) {
+         var Clone=$(self).parent().clone();
+         //Clone.children(":button").val("-").attr("onclick","func2(this)");
+
+         $("#outer").append(Clone)
+     }
+     
+     function func2(self) {
+         alert(123)
+         $(self).parent().remove()
+     }
+    
+    
+</script>
+</body>
+</html>

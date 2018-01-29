@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<input type="button" onclick="selectall()" value="全选">
+<input type="button" onclick="cancel()" value="取消">
+<input type="button" onclick="reverse()" value="反选">
+
+<br>
+<hr>
+<table border="1" class="box">
+    <tr>
+        <td><input type="checkbox"></td>
+        <td>111</td>
+        <td>111</td>
+        <td>111</td>
+    </tr>
+     <tr>
+        <td><input type="checkbox"></td>
+        <td>111</td>
+        <td>111</td>
+        <td>111</td>
+    </tr>
+     <tr>
+        <td><input type="checkbox"></td>
+        <td>111</td>
+        <td>111</td>
+        <td>111</td>
+    </tr>
+</table>
+
+<script>
+     function selectall() {
+        var ele=document.getElementsByClassName("box")[0];
+        var inputs=ele.children[0].getElementsByTagName("input");
+         for (var i in inputs){
+             inputs[i].checked =true;
+         }
+     }
+     
+     function cancel() {
+         var ele=document.getElementsByClassName("box")[0];
+        var inputs=ele.children[0].getElementsByTagName("input");
+         for (var i in inputs){
+             inputs[i].checked =false;
+         }
+     }
+     
+     function reverse() {
+          var ele=document.getElementsByClassName("box")[0];
+        var inputs=ele.children[0].getElementsByTagName("input");
+         for (var i in inputs){
+             if(inputs[i].checked){
+                  inputs[i].checked =false;
+             }else {
+                 inputs[i].checked =true;
+             }
+
+         }
+
+     }
+</script>
+
+</body>
+</html>

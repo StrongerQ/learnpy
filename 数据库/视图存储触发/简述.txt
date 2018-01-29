@@ -1,0 +1,53 @@
+http://www.cnblogs.com/wupeiqi/articles/5713323.html 佩琪
+1、视图
+    a. 临时表
+    b. 只能查
+    c. 执行时才获取数据
+    
+2、存储过程
+    a. 可写复杂逻辑
+    b. 参数：in(传入)   out(返回值)   inout(都可以)
+    c. 结果集：select ...
+    @ 声明变量
+    declare x int default 9   存储过程中声明声明
+    set x = 10 变量赋值
+3、动态SQL
+    a. sql是字符串
+    b. 字符串格式化 ? execute proc using @p1
+    
+4、触发器
+    a. 为某一个表：
+        inser 前后
+        update 前后
+        delete 前后
+    b. OLD，NEW
+    
+    c. 删除多行，插入，更新
+        for 多行：
+            OLD，NEW
+    
+    # 删除之前，讲删除的之添加到另外一张表
+    delete from tb1 where nid = 1
+    -- 张二狗 =>tb2
+    delete from tb1： OLD
+    -- 张二狗 =>tb2
+    -- 张三狗 =>tb2
+    -- 张四狗 =>tb2
+    -- 张六狗 =>tb2
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

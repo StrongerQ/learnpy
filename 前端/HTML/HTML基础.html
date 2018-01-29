@@ -1,0 +1,148 @@
+<!--http://www.cnblogs.com/yuanchenqi/articles/5976755.html  HTTP介绍-->
+<!--http://www.cnblogs.com/yuanchenqi/articles/6000358.html  HTTP协议-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--<meta http-equiv="refresh" content="2;URL=https://www.baidu.com">-->
+    <title>Learn</title>
+    <link rel="icon" href="//www.jd.com/favicon.ico">
+    <style>
+        /*    #与id唯一绑定       */
+        #div1{
+            height: 300px;
+            background-color: aqua;
+        }
+        #div2{
+            height: 300px;
+            background-color: yellow;
+        }
+        #div3{
+            height: 300px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="xiaoxiao">你好前端</h1> <!--id是属性,方便定位-->
+            <h2 style="color: brown">前端</h2>
+    <img src="1.jpg" width="700px" height="350px" alt="加载失败" title="风景"><br>
+    <hr/><!--标横线-->
+    <div id="top">hello</div> <!--块级标签-->
+    <span>word</span><!--内连标签-->
+    <hr>
+    hello<br><!--换行-->
+    word<br>
+    <b>加&nbsp;&nbsp;粗</b><br>
+    <em>变斜</em><br>
+    <del>删除</del><br>
+    <a href="http://www.baidu.com" target="_blank" title="hahahaha">百度</a><br><!--a的两个功能 1.超链接 2.锚-->
+    <a href="#div1">第一章</a><br>
+    <a href="#div2">第二章</a><br>
+    <a href="#div3">第三章</a><br>
+    <div id="div1">
+        11111111
+    </div>
+    <div id="div2">
+        22222222
+    </div>
+    <div id="div3">
+        33333333
+    </div>
+    <a href="#top">返回</a>
+    <ul>       <!--无序列表 unorder list-->
+        <li>1111111</li>
+        <li>2222222</li>
+        <li>3333333</li>
+    </ul>
+    <ol>       <!--有序列表 order list-->
+        <li>1111111</li>
+        <li>2222222</li>
+        <li>3333333</li>
+    </ol>
+    <dt>       <!--定义列表 define title-->
+        <dd>1111111</dd>       <!--定义数据 define data-->
+        <dd>2222222</dd>
+        <dd>3333333</dd>
+    </dt>
+    <table border="1">
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+            </tr>
+            <thead>
+                <tr>
+                    <th>NO</th>
+                    <th>NO</th>
+                    <th>NO</th>
+                </tr>
+            </thead>
+        </tbody>
+    </table>
+ <table border="1" cellpadding="10px" cellspacing="0px">
+
+     <tbody>
+           <thead>
+            <tr>
+               <th>标题1</th>
+               <th>标题2</th>
+               <th>标题3</th>
+            </tr>
+           </thead>
+           <tr>  <!--table row-->
+               <td>内容1</td> <!--table data-->
+               <td>内容2</td>
+               <td>内容3</td>
+           </tr>
+           <tr>
+               <td>内容4</td>
+               <td>内容5</td>
+               <td>内容6</td>
+           </tr>
+           <tr>
+               <td>内容7</td>
+               <td>内容8</td>
+               <td>内容9</td>
+           </tr>
+     </tbody>
+
+
+ </table>
+
+<hr>
+ <table border="1">
+
+           <tr>
+               <th id="th1">标题1</th>
+               <th>标题2</th>
+               <th>标题3</th>
+           </tr>
+
+           <tr>
+               <td colspan="2">内容1</td>
+               <td rowspan="2">内容3</td>
+           </tr>
+           <tr>
+               <td>内容1</td>
+               <td>内容2</td>
+
+           </tr>
+           <tr>
+               <td>内容1</td>
+               <td>内容2</td>
+               <td>内容3</td>
+           </tr>
+
+
+  </table>
+
+
+</body>
+</html>

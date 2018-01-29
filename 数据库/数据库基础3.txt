@@ -1,0 +1,151 @@
+
+一、Navicat
+    
+    上一节： 基于命令
+    Navicat，用于连接数据库，
+            - 查找
+            - 修改
+            - 根性
+            ....
+            # 点点点: -> SQL语句
+
+    下载软件：Navicat
+    
+    简化简单操作
+        创建表
+        修改表结构
+        插入
+        查询
+        更新
+        删除
+    复杂（？）：
+    
+    
+    ======》
+            
+        a = input('情书用户：')
+        b = input('情书密码：')
+        c = input('情书ip：')
+        # 连接数据数据库的语句
+        # c:\mysql-5.7.16-winx64\mysql-5.7.16-winx64\bin\mysql -uroot -p666
+        # subprocess(cmd)
+        
+        sql = input('sql?')
+        # 
+           
+
+二、练习题
+        - 练习
+          
+          数据库：
+            导入
+            导出
+          命令：
+            mysqldump -uroot -p666 dbname > 1.sql
+            mysqldump -uroot -p666 dbname < 1.sql
+          1、导入数据
+              mysqldump 
+          2、掠过
+          3、
+             - avg获取平均值
+               select student_id,avg(num) from score group by student_id HAVING avg(num) > 60
+             - 连表
+                select * from score LEFT JOIN student on score.student_id = student.sid 
+             - 临时表
+                select age,name from (select nid,name,age from tb1 where id>10) as T
+           4、过
+           5、_
+           6、过
+           7、—
+           8、
+                select student_id from score where course_id in (
+                    select cid from course left join teacher on course.teacher_id = teacher.tid where teacher.tname='李平老师'
+                ) group by student_id
+           9、过
+           10、查询有课程成绩小于60分的同学的学号、姓名；
+              select student_id from score where num < 60 group by student_id
+              - DISTINCT 去重
+           11、-
+           12、-
+           13、-
+           14、-
+           15、-
+           16、-
+           17. SELECT outers.student_id,
+              (SELECT num from score WHERE course_id = 1 and student_id = outers.student_id)as yw,
+              (SELECT num from score WHERE course_id = 2 and student_id = outers.student_id)as sx,
+              (SELECT num from score WHERE course_id = 3 and student_id = outers.student_id)as wy,COUNT(1),
+               -- AVG(outers.num)
+              (SELECT AVG(num) FROM score WHERE student_id = outers.student_id)
+               from score as outers GROUP BY outers.student_id  ORDER BY AVG(outers.num)
+
+
+               select 后面可以不加表
+           ...
+             
+        
+        - 内容补充
+            - 临时表
+            - 去重
+            - avg
+    
+三、Python操作MySQL
+        https://pypi.python.org/pypi
+        
+        # D:\Program Files\Python35\Scripts
+        
+        pip3 install pymysql
+        # 下载本地
+        # 解压到执行目录 
+        # python2,默认无pip命令
+        # python3,默认自带pip3命令 python3 -m pip install --upgrade pip
+        
+        yum install xxxx
+        apt-get install ...
+        brew install ...
+        easyinstall ...
+
+        
+        pymysql
+            - 专门用于操作MySQLpython模块
+            - MySQLdb（py3）
+            
+            
+            sql。。。
+       
+
+       
+       
+整理：
+    
+    Navicat基本使用
+    练习题：
+        - avg获取平均值
+        - 去重、
+        - 练习连表
+        - 临时表
+    
+    pymysql
+        - pip 
+        - 操作数据：
+              连接，游标  xx  关闭游标 关闭连接
+              1、不能用字符串拼接 SQL注入
+              2、 
+                  增加：
+                        execute(xx, )
+                        executemany(xx, [(),()])
+                  删除：
+                        execute(xx, ...)
+                        
+                  修改：
+                        execute(xx, ...)
+                    ----- commit -----
+                  查询：
+                        execute(xx, ...)
+                        
+                        fetchone()
+                        fetchall()
+                        # 指针
+                  其他：
+                        获取自增ID
+                        定制游标，字典形式数据

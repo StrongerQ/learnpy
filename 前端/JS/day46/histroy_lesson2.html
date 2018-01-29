@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="后退" onclick="func2();">
+
+
+
+<script>
+    // history内部三种方法：forward back go 一个属性：length
+
+    function func2() {
+//        history.back();
+        history.go(-1);
+        alert(history.length)
+    }
+</script>
+</body>
+</html>

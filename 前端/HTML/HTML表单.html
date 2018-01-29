@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--<form action="127.0.0.1:8090/index" method="get">  &lt;!&ndash;把数据以GET提交到指定url&ndash;&gt;-->
+    <!--GET会把提交的数据链接url一起发送,可以看到-->
+<form action="127.0.0.1:8090/index" method="post" enctype="multipart/form-data">  <!--把数据以POST提交到指定url-->
+    <!--POST会把提交的数据非显示发送给服务器 -->
+    <!--enctype规定在发送到服务器之前应该如何对表单数据进行编码,使用包含文件上传控件的表单时，必须使用该值,文件单独封装在文件对象中 -->
+    <label for="userinput">用户名</label> <!--通过ID把文本和标签关联-->
+    <p>账号<input id="userinput" type="text" name="username"></p>    <!--提交数据后,服务端能拿到name与输入值组成的键值对的字典-->
+    <!--  例如提交账号密码后服务器能收到{'username':'alex','password':'12345'}   -->
+    <p>密码<input type="password" name="password"></p>
+    <p><input type="button" value="but"></p>
+    <p><input type="checkbox" name="hobby" value="movie">电影</p>  <!--复选框-->
+    <p><input type="checkbox" name="hobby" value="music">音乐</p>  <!--多选时同一个name就对应一个拥有多个value值的列表-->
+    <p><input type="checkbox" name="hobby" value="gogogo">旅游</p>  <!--复选框-->
+    <hr>
+    <p>男<input type="radio" name="sex" value="male"></p>  <!--单选同一个name只能赋予一个value的值-->
+    <p>女<input type="radio" name="sex" value="female"></p>  <!--name属性是给服务器传过去字典的key,id属性是给-->
+    <p><input type="file" name="filename"></p>  <!--上传文件-->
+    <p><input type="reset" value="重整"></p>
+    <p><input type="submit" value="搞定"></p>
+
+    <select name="city" multiple size="5">        <!--选择 没有multiple时name和value组成一对一的键值对-->
+        <optgroup label="首都">
+            <option value="bei">北</option>           <!--有multiple时name和value组成一对多的键值对--->
+        </optgroup>
+        <optgroup label="非首都">
+            <option value="shang">上</option>         <!--size可见次数--->
+            <option value="guang">广</option>
+            <option value="sheng">深</option>
+        </optgroup>
+    </select><br>
+    <textarea name="contents" rows="20" cols="20">自我介绍</textarea>
+
+</form>
+
+
+
+</body>
+</html>

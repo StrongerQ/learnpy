@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<input type="text" id="clock" style="width: 249px">
+<input type="button" value="begin" onclick="begin_click()">
+<input type="button" value="End" onclick="End()">
+<input type="button" value="timeout" onclick="f1()">
+
+<script>
+    function Timeout() {
+        alert(123);
+    }
+    function f1() {
+        var ID=setTimeout(Timeout,1000);
+        clearTimeout(ID)
+    }
+
+
+    function begin() {
+        var stime=getTime();
+        var ret=document.getElementById("clock");
+        ret.value=stime;
+    }
+
+    var ID;
+    function begin_click() {
+         if (ID==undefined){
+              begin();
+              ID=setInterval(begin,1000);
+         }
+
+    }
+    function End() {
+
+        clearInterval(ID);
+        ID=undefined;
+    }
+    
+    //-------------alert confirm  prompt-------------
+
+//       var ret=confirm("内容是否保存！")
+//       alert(ret)
+//
+//            if (ret){
+//            }else {
+//            }
+
+//         var ret=prompt("hello")
+//         alert(ret);
+
+
+
+
+   // ---------------------------------定时器-----
+
+    function getTime() {
+     var date_obj= new Date();
+    var year=date_obj.getFullYear();
+    var month=date_obj.getMonth()+1;
+    var day=date_obj.getDate();
+    var hour=date_obj.getHours();
+    var minute=date_obj.getMinutes();
+    var seconds=date_obj.getSeconds();
+    var week=date_obj.getDay();
+
+    return year+"年"+month+"月"+f(day)+"日"+" "+hour+": "+minute+" :"+seconds+" "+num_week(week)
+}
+    function f(num) {
+        if (num<10){
+             return "0"+num;
+        }
+        return num;
+    }
+    function num_week(n) {
+        week=["星期日","星期一","星期二","星期三","星期四","星期五","星期六"]
+        return week[n]
+    }
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

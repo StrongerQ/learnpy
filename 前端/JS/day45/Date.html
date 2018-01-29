@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+
+<script>
+    //创建方式：
+
+//    var date_obj= new Date();
+//    alert(date_obj.toLocaleString())
+
+//    var date_obj2= new Date("2016 3 23 12:20");
+//    alert(date_obj2.toLocaleString())
+
+
+//    var date_obj3= new Date(50000000);
+//    alert(date_obj3.toLocaleString())
+//    alert(date_obj3.toUTCString())
+
+function getTime() {
+     var date_obj= new Date();
+//    console.log(date_obj.getFullYear());
+//    console.log(date_obj.getMonth());
+//    console.log(date_obj.getDate());
+//    console.log(date_obj.getDay());
+//    console.log(date_obj.getHours());
+//    console.log(date_obj.getMinutes());
+//    console.log(date_obj.getSeconds());
+//    console.log(date_obj.getHourMinuteSecond);
+//    console.log(date_obj.getMilliseconds());
+    var year=date_obj.getFullYear();
+    var month=date_obj.getMonth()+1;
+    var day=date_obj.getDate();
+    var hour=date_obj.getHours();
+    var minute=date_obj.getMinutes();
+    var seconds=date_obj.getSeconds();
+    var week=date_obj.getDay();
+
+
+    return year+"年"+month+"月"+f(day)+"日"+" "+hour+": "+minute+" :"+seconds+" "+num_week(week)
+}
+    //Date方法：
+    alert(getTime());
+    function f(num) {
+        if (num<10){
+             return "0"+num;
+        }
+        return num;
+    }
+    function num_week(n) {
+        week=["星期日","星期一","星期二","星期三","星期四","星期五","星期六"]
+        return week[n]
+    }
+
+
+//    2016年 11月 08日 15：02 星期二
+
+     var date_obj= new Date();
+    alert(date_obj.getTimezoneOffset())
+
+</script>
+</body>
+</html>

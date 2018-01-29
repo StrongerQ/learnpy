@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+       .bigger{
+           font-size: 40px;
+           color: #84a42b;
+       }
+       .small{
+            font-size: 10px;
+            color: rebeccapurple;
+        }
+
+    </style>
+</head>
+<body>
+
+<div id="div1">fhslajkdfhsdjfsdasadfhlakjsdfhkjl</div>
+<input type="button" onclick="change('bigger')" value="big">
+<input type="button" onclick="change('small')" value="small">
+
+<script>
+    function change(a) {
+        var ele=document.getElementById("div1");
+
+        ele.classList.add(a);
+
+    }
+//
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+1、回顾普通布局
+2、新布局
+      - overflow:auto:
+           上，左菜单固定
+      - 无
+3、滚动菜单示例：
+    新布局（无）
+    a. onscroll事件
+    b. $(..).scrollTop()   $(..).scrollTop(10) =>$(..).scrollLeft(10)
+
+    c. 如何获取某个标签距离顶部高度
+        $(..).offset()        获取当前标签距离文档顶部高度
+        
+        $(..).height()        永远获取自己的高度；             获取当前标签自己的高度
+        $(..).innerHeight()   永远获取自己高度+padding;        获取第一个匹配元素内部区域高度（包括补白、不包括边框）。
+        $(..).outerHeight()   
+                              参数一：false:
+                                永远获取自己高度+padding+border; 获取第一个匹配元素外部高度（默认包括补白和边框）设置为 true 时，计算边距在内。
+                              参数二：true
+                                永远获取自己高度+padding+border+margin;
+
+#

@@ -1,0 +1,47 @@
+数据库操作:
+
+    1、数据库连接写入配置文件：
+        用户名  密码  数据库  端口 编码
+    2、数据库每一个张表 《=》 程序中创建一个类
+       如果连表时候，可以选择将 操作写入 left join 前面的那个类中
+
+        class UserInfoRepository:
+
+            def get_all(self):
+                sql = 'select * from userinfo'
+                retrun fetchall()
+
+            def get_one_by_user_pwd(self,username,password)
+                sql = "select * from userinfo where username=%s and password=%s"
+                cursor.excute(sql, username,password)
+                retrun cursor.fetchone()
+
+            def add()
+                sql = "inser into userinfo(...) values(...)"
+                conn.commit()
+        class
+    3、obj = UserInfoRepository()
+       obj.get()
+
+
+
+用户：
+    增、删、修、查
+
+角色表 role：
+    增、删、修、查
+
+权限表 permission
+    增、删、修、查
+
+角色-权限关系表 permission_to_role
+    增、删、修、查
+
+
+增、删、修、查  属于数据库直接操作 单独一个文件夹
+功能属于业务层 单独一个文件夹
+
+1、创建权限
+2、开发执行模块下的函数
+3、写相应的功能
+4、给某个用户类型（角色）添加这个权限

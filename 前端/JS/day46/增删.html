@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        #div1{
+            height: 200px;
+            background-color: #84a42b;
+        }
+    </style>
+</head>
+<body>
+
+<div id="div1">
+    <div id="div2">hello div2</div>
+    <p>hello p</p>
+    <!--<p><em>hello ppppp</em></p>-->
+</div>
+
+<input type="button" value="添加p" onclick="add();">
+<input type="button" value="删除p" onclick="remove();">
+
+<script>
+function remove() {
+    var ele=document.getElementById("div1");
+
+    var last_son=ele.lastElementChild;
+
+    ele.removeChild(last_son);
+}
+function add() {
+    var ele=document.getElementById("div1");
+    var son=document.createElement("p");
+    son.innerHTML="<em>hello ppppp</em>"
+//    son.innerText="<em>hello ppppp</em>";
+    ele.appendChild(son);
+
+
+}
+</script>
+</body>
+</html>
